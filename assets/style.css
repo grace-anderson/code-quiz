@@ -74,24 +74,22 @@ li {
   margin: 1rem 0;
 }
 
-.answer-message-correct {
+.answer-message {
   display: none;
   font-size: 2rem;
   width: 100%;
-  color: #0dff5b;
   margin: 2rem 0;
+  font-weight: bolder;
   padding-top: 0.2rem;
   border-top: 1px solid #adb5bd;
 }
 
+.answer-message-correct {
+  color: #0dff5b;
+}
+
 .answer-message-incorrect {
-  display: none;
-  font-size: 2rem;
-  width: 100%;
   color: #ff1e19;
-  margin: 2rem 0;
-  padding-top: 0.2rem;
-  border-top: 1px solid #adb5bd;
 }
 
 #input {

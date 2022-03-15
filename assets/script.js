@@ -24,7 +24,7 @@ var timerInterval = false;
 // functions
 
 //1. startQuiz called by startQuizButton
-//2. startQuiz updates timer to 75,
+//2. startQuiz sets timer to 75,
 //hides startQuizButton
 //calls countdown -> 3
 //calls displayQuestion -> 4
@@ -46,16 +46,15 @@ function countdown() {
     timer--;
     timerDisplay.textContent = timer;
     //if timer value is less than one, display zero
-    // and end the game endGame -> 7.
-    // and clear the timerInterval countdown
+    // and end game endGame -> 7.
+    // and clear timerInterval countdown
     if (timer < 1) {
       timerDisplay.textContent = 0;
       endGame();
       clearInterval(timerInterval);
     }
-    //if currentQuestion equals length of questions array, stop the timer decrementing
+    //if currentQuestion equals length of questions array, stop timer decrementing
     if (currentQuestion === questions.length) {
-      // timerDisplay.textContent = timer;
       clearInterval(timerInterval);
     }
   }, 1000);
@@ -65,13 +64,13 @@ function countdown() {
 function displayQuestion() {
   //styles for quiz-page
   container.className = "quiz-page p-3 mb-2 bg-light text-dark";
-  //set text of question to be currentQuestion + 1
+  //set text of question to currentQuestion + 1
   title.textContent = "Question " + (currentQuestion + 1);
   title.setAttribute("class", "h2");
-  //call the currentQuestion index's text from the questions array (questions.js file)
+  //call the currentQuestion index's title from the questions array
   text.textContent = questions[currentQuestion].title;
   text.className = "h4";
-  //update text style for questions
+  //update style for question
   text.setAttribute(
     "style",
     "border-top: 1px double #adb5bd; padding-top: 2rem;"
@@ -84,7 +83,7 @@ function displayQuestion() {
   answerChoice[1].textContent = "2. " + questions[currentQuestion].choices[1];
   answerChoice[2].textContent = "3. " + questions[currentQuestion].choices[2];
   answerChoice[3].textContent = "4. " + questions[currentQuestion].choices[3];
-  //add event listener to each answerChoice.
+  //add event listener to call checkAnswer to each answerChoice.
   //when an answerChoice text is clicked, call checkAnswer -> 5.
   for (i = 0; i < answerChoice.length; i++) {
     answerChoice[i].addEventListener("click", checkAnswer);
@@ -99,16 +98,16 @@ function checkAnswer(event) {
     //display the answer-message-correct message
     answerMessage.style.display = "block";
     answerMessage.textContent = "Correct!";
-    answerMessage.className = "answer-message-correct";
-    //add one to currentQuestion variable
+    answerMessage.className = "answer-message answer-message-correct";
+    //add one to currentQuestion
     currentQuestion++;
     //add one to the score
     score++;
-    //hide the correct answer message after 1 second
+    //hide the correct message after 800 ms
     setTimeout(function () {
       answerMessage.style.display = "none";
-    }, 1000);
-    //if currentQuestion = questions.length, endGame -> 6.
+    }, 800);
+    //if last currentQuestion, endGame -> 6.
     if (currentQuestion === questions.length) {
       endGame();
       //else continue to displayQuestion -> 4.
@@ -117,23 +116,21 @@ function checkAnswer(event) {
     }
     //else the answer is incorrect, so
   } else {
-    //display the answer-message-incorrect message
+    //display the incorrect message
     answerMessage.style.display = "block";
     answerMessage.textContent = "Incorrect!";
-    answerMessage.className = "answer-message-incorrect";
+    answerMessage.className = "answer-message answer-message-incorrect";
     //add one to currentQuestion variable
     currentQuestion++;
-    //hide the incorrect answer message after 1 second
+    //hide the incorrect answer message after 800 ms
     setTimeout(function () {
       answerMessage.style.display = "none";
-    }, 1000);
+    }, 800);
     //if timer is less than 10, subtract 10 then endGame -> 6.
     if (timer < 10) {
       timer -= 10;
-      // timer === 0;
       endGame();
       // else if currentQuestion is the last question then endGame -> 6.
-      // } else if currentQuestion >= 14) {
     } else if (currentQuestion === questions.length) {
       endGame();
     } else {
@@ -146,14 +143,14 @@ function checkAnswer(event) {
 
 //6. function endGame - display the results page with score and message
 function endGame() {
-  //hide the quizAnswers display
+  //hide quiz page
   quizAnswers.style.display = "none";
-  //styles for result display
+  //add styles for result display
   container.className = "results-page p-3 mb-2 bg-light text-dark";
   title.setAttribute("class", "h2");
   text.setAttribute("style", "border-top: 0");
   text.removeAttribute("class");
-  //display score variable
+  //display score 
   text.textContent = `Your final score is ${score}.`;
   input.style.display = "block";
 
@@ -167,10 +164,7 @@ function endGame() {
   }
   // click on Submit button to store score
   // then call storeScore function -> 7.
-  // submitInitialsButton.addEventListener("click", storeScore);
-
   submitForm.addEventListener("submit", storeScore) 
-
 }
 
 //7. storeScore
@@ -179,7 +173,6 @@ function endGame() {
 function storeScore(event) {
   //prevent submitting button from refreshing page
   event.preventDefault();
-
   //test for text being entered into the input
   if (initials.value.length === 0) {
     return;
@@ -191,24 +184,24 @@ function storeScore(event) {
     };
     //add userScore object instance to scoreArray
     scoreArray.push(userScore);
-    //use compare function to sort scoreArray in descending userScores
+    //use compare function to sort scoreArray in descending scores
     scoreArray.sort((a, b) => b.userScore - a.userScore);
     //save updated scoreArray in local storage
     localStorage.setItem("score", JSON.stringify(scoreArray));
-
+    //then show scores
     openHighScores();
   }
 }
 
 // 8. openHighScores
 //called after initials and scores are saved locally
-//OR by clicking High Scores link
+//OR by clicking High Scores link in nav
 function openHighScores() {
   // clear the timer decrimenting
   if (timerInterval) {
     clearInterval(timerInterval);
   }
-  //set up score-page for display
+  //set up score-page and list for display
   container.className = "score-page p-3 mb-2 bg-light text-dark";
   var ul = document.createElement("ul");
   //"Go Back" button
@@ -219,7 +212,7 @@ function openHighScores() {
   var clearHighScoresButton = document.createElement("button");
   clearHighScoresButton.setAttribute("class", "btn btn-primary custom-btn-primary");
   clearHighScoresButton.textContent = "Clear High Scores";
-  //append elements to the container
+  //append list and buttons to container
   container.appendChild(ul);
   container.appendChild(goBackButton);
   container.appendChild(clearHighScoresButton);
@@ -252,7 +245,7 @@ function openHighScores() {
   goBackButton.addEventListener("click", function () {
     location.href = "index.html";
   });
-  //clicking "Clear High Scores", clears local storage and displays ul with no content
+  //clicking "Clear High Scores", clears local storage and displays empty ul
   clearHighScoresButton.addEventListener("click", function () {
     localStorage.clear();
     ul.innerHTML = "";
@@ -262,7 +255,7 @@ function openHighScores() {
 //1.b loadHighScore
 //load locally saved high scores into scoreArray when user opens/refreshes index page - ready to add to from quiz game
 function loadHighScore() {
-  //use JSON to call and parse score stored locally
+  // JSON call and parse score 
   //"score" is updated and saved locally by 7. storeScore
   var storedScores = JSON.parse(localStorage.getItem("score"));
 
