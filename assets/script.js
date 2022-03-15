@@ -213,11 +213,11 @@ function openHighScores() {
   var ul = document.createElement("ul");
   //"Go Back" button
   var goBackButton = document.createElement("button");
-  goBackButton.setAttribute("class", "btn btn-primary btn-lg");
+  goBackButton.setAttribute("class", "btn btn-primary btn-lg custom-btn-primary");
   goBackButton.textContent = "Go Back";
   //"Clear High Scores" button
   var clearHighScoresButton = document.createElement("button");
-  clearHighScoresButton.setAttribute("class", "btn btn-primary btn-lg");
+  clearHighScoresButton.setAttribute("class", "btn btn-primary btn-lg custom-btn-primary");
   clearHighScoresButton.textContent = "Clear High Scores";
   //append elements to the container
   container.appendChild(ul);

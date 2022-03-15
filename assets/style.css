@@ -1,5 +1,5 @@
 /* updates to default styles */
-.navbar {
+.custom-navbar {
   padding-left: 2rem;
   padding-right: 2rem;
   margin-bottom: 1rem;
@@ -35,7 +35,7 @@ button {
   margin-right: 0;
 }
 
-.btn-primary {
+.custom-btn-primary {
   background-color: #000eff;
 }
 
