@@ -1,1 +1,110 @@
-#TO DO
+# Code Quiz Challenge
+
+## Purpose
+As an aspiring full-stack web developer, you can use this code quiz challenge to prepare for coding assessments often required as part of an interview process. The timed quiz, comprised of multiple-choice questions, can keep your score from each attempt for you to monitor your improvement or compare your progress with your peers. 
+
+[Deployed coding quiz application](https://grace-anderson.github.io/code-quiz/)
+
+
+## Usage
+On the quiz home page, the user starts by clicking the "Start Quiz" button. This click event initiates a 75 second timer, which starts reducing by 1 second increments, and presents the first of fifteen multi-choice questions.
+- A correct answer displays a "correct" message
+- An incorrect answer displays an "incorrect" message and reduces the timer by ten seconds. 
+- The quiz challenge ends when the timer reaches 0 or when all questions are answered
+
+When the quiz ends, the user is presented with the remaining time, their score, and a field in which to enter their initials. After submitting their initials, the user is presented with the high scores page which lists user initials with their scores, ordered from the highest to the lowest score. The high score page can also be accessed from the quiz home page. From the high score page, the user can choose to return to the quiz home page or clear the high scores.
+
+The application code is available on [GitHub](https://github.com/grace-anderson/code-quiz). 
+
+
+### Instructions
+
+#### 1. Click Generate Password
+Click the **Start Quiz** button to start the quiz. 
+
+=> The application will show the first multi-choice question and start a 75 second time, which will reduce by 1 second until 0 is reached (page top-right).
+
+#### 2. Answer the first multi-choice question
+Choose one answer from the multiple choices presented.
+
+=> If your choice is **correct**, a green "correct" message will quickly display (800 ms)
+=> if your choice is **incorrect**, a red "incorrect" message will quickly display (800 ms) AND 10 seconds will be deducted from the timer
+
+=> If the timer is greater than 0, the next question will display
+
+#### 3. Continue to answer each multi-choice question
+Continue to choose an answer for each multi-choice question
+
+=> The quiz challenge will end when the timer reaches 0 OR when all questions are answered. 
+
+#### 4. View score and enter initials 
+=> After the quiz ends, the your score will display. 
+
+Enter your initials and click **Submit**. 
+
+### 5. View high scores
+=> After clicking submit, the High Scores page displays listing scores from highest to lowest including the score of the quiz you just completed.
+
+From the High Scores page you can choose to **Clear High Scores** or **Go Back** to the quiz home page. You can also click the **High Scores** link on the home page (top left) to view the High Scores page
+
+## Features
+
+The Code Quiz Challenge
+- Can be repeated as many times as the user wants
+- Provides the user with an efficient "one click" method to answer multi-choice questions, as one click of the chosen answer both triggers correct/incorrect feedback and opens the next question. 
+- Motivates the user to choose correct answers by penalising incorrect answers with a 10 second time deduction
+- Enables a user to time themselves completing the coding multi-choice questions
+- Saves high scores locally so that the user can track their progress or compare with peers
+
+  
+## Tests
+
+1. When the application opens, I am presented with a page that displays without error and matches Mockup 1 (below)
+2. When I click the **Start Quiz** button, the first question appears (Mockup 2)
+3. When I click the **Start Quiz** button, the timer starts at 75 seconds and reduces in 1 second increments (Mockup 3)
+4. Choosing a correct answer triggers a green "correct" message and opens the next question. The timer continues to reduce in 1 second increments ( Mockup 4) 
+5. When the timer reaches 0 before all questions are answered, a heading "You ran out of time!" displays with the final score (Mockup 5)
+6. When I answer all questions before the timer reaches 0, a heading "All done!" displays with the final score (Mockup 6)
+7. When I enter my initials and then click **Submit**, the High Scores page opens (Mockup 7)
+8. The High Scores listed include my initials and score from the previous game, and other initials with their scores if these are locally saved. The scores are ordered numerically from highest to lowest (Mockup 8)
+9. When on the Home Scores page, if I click **Clear High Scores** all the initials and scores are deleted from local storage and do not display on the page. (Mockup 8)
+10. When on the Home Scores page, if I click **Go Back** the Coding Quiz Challenge home page opens 
+11. When on the Coding Quiz challenge home page, if I click the High Scores link the High Scores page opens.
+
+
+## Challenges and Further Work
+
+### Tracking functions
+This is the most complex web application I've made, and it was very challenging tracking all the functions and keeping the code organised. I've probably "over commented" in an attempt to keep track of what the code is doing. I also used numbering to help remember the order the function were called. 
+
+## Mock-Ups
+
+The following imagees show the web application's appearance and functionality:
+
+### Mock-Up 1
+
+![Mock-Up 1](./assets/images/mock-up-1.png)
+
+
+### Mock-Up 2
+
+![Mock-Up 2](./assets/images/mock-up-2.png)
+
+
+### Mock-Up 3
+
+![Mock-Up 3](./assets/images/mock-up-3.png)
+
+
+### Mock-Up 4
+
+![Mock-Up 4](./assets/images/mock-up-4.png)
+
+### Mock-Up 5
+
+![Mock-Up 5](./assets/images/mock-up-5.png)
+
+### Mock-Up 6
+
+![Mock-Up 6](./assets/images/mock-up-6.png)
+
