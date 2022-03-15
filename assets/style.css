@@ -98,6 +98,10 @@ li {
   display: none;
 }
 
+.custom-form-label {
+  padding-left:1rem;
+}
+
 #initials {
   margin: 0 1rem 1rem 1rem;
   max-width: 50%;
