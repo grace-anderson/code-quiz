@@ -7,6 +7,8 @@ As an aspiring full-stack web developer, you can use this code quiz challenge to
 
 
 ## Usage
+The user can click through this interactive coding quiz, finally entering initials to save the high score before resetting and starting over
+
 On the quiz home page, the user starts by clicking the "Start Quiz" button. This click event initiates a 75 second timer, which starts reducing by 1 second increments, and presents the first of fifteen multi-choice questions.
 - A correct answer displays a "correct" message
 - An incorrect answer displays an "incorrect" message and reduces the timer by ten seconds. 
@@ -50,11 +52,12 @@ From the High Scores page you can choose to **Clear High Scores** or **Go Back**
 ## Features
 
 The Code Quiz Challenge
-- Can be repeated as many times as the user wants
+- can be repeated as many times as the user wants
 - Provides the user with an efficient "one click" method to answer multi-choice questions, as one click of the chosen answer both triggers correct/incorrect feedback and opens the next question. 
 - Motivates the user to choose correct answers by penalising incorrect answers with a 10 second time deduction
 - Enables a user to time themselves completing the coding multi-choice questions
 - Saves high scores locally so that the user can track their progress or compare with peers
+- Gives the user control over whether to keep or discard the high scores
 
   
 ## Tests
@@ -74,8 +77,8 @@ The Code Quiz Challenge
 
 ## Challenges and Further Work
 
-### Tracking functions
-This is the most complex web application I've made, and it was very challenging tracking all the functions and keeping the code organised. I've probably "over commented" in an attempt to keep track of what the code is doing. I also used numbering to help remember the order the function were called. 
+### Tracking functions and keeping organised
+This is the most complex web application I've made, and found it challenging tracking all the functions and code components, and keeping the code organised. I've "over commented" in an attempt to keep track of what the code is doing. I also used numbering to help remember the order the functions were called. After a few disasters, where I broke the application and couldn't resolve, I was more rigorous about making back up copies and commiting changes using git. 
 
 ## Mock-Ups
 
