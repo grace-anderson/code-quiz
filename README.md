@@ -1,13 +1,13 @@
 # Code Quiz Challenge
 
 ## Purpose
-As an aspiring full-stack web developer, you can use this code quiz challenge to prepare for coding assessments often required as part of an interview process. The timed quiz, comprised of multiple-choice questions, can keep your score from each attempt for you to monitor your improvement or compare your progress with your peers. 
+As an aspiring full-stack web developer, use this code quiz challenge to prepare for coding assessments often required for the interview process. The timed quiz, comprised of multiple-choice questions, can keep your score from each attempt for you to monitor your improvement or compare your progress with your peers. 
 
 [Deployed coding quiz application](https://grace-anderson.github.io/code-quiz/)
 
 
 ## Usage
-The user can click through this interactive coding quiz, finally entering initials to save the high score before resetting and starting over
+The user can click through this interactive coding quiz, entering initials to save the their score before resetting and starting over
 
 On the quiz home page, the user starts by clicking the "Start Quiz" button. This click event initiates a 75 second timer, which starts reducing by 1 second increments, and presents the first of fifteen multi-choice questions.
 - A correct answer displays a "correct" message
@@ -47,7 +47,7 @@ Enter your initials and click **Submit**.
 ### 5. View high scores
 => After clicking submit, the High Scores page displays listing scores from highest to lowest including the score of the quiz you just completed.
 
-From the High Scores page you can choose to **Clear High Scores** or **Go Back** to the quiz home page. You can also click the **High Scores** link on the home page (top left) to view the High Scores page
+From the High Scores page, you can choose to **Clear High Scores** or **Go Back** to the quiz home page. You can also click the **High Scores** link on the home page (top left) to view the High Scores page
 
 ## Features
 
@@ -62,52 +62,25 @@ The Code Quiz Challenge
   
 ## Tests
 
-1. When the application opens, I am presented with a page that displays without error and matches Mockup 1 (below)
-2. When I click the **Start Quiz** button, the first question appears (Mockup 2)
-3. When I click the **Start Quiz** button, the timer starts at 75 seconds and reduces in 1 second increments (Mockup 3)
-4. Choosing a correct answer triggers a green "correct" message and opens the next question. The timer continues to reduce in 1 second increments ( Mockup 4) 
-5. When the timer reaches 0 before all questions are answered, a heading "You ran out of time!" displays with the final score (Mockup 5)
-6. When I answer all questions before the timer reaches 0, a heading "All done!" displays with the final score (Mockup 6)
-7. When I enter my initials and then click **Submit**, the High Scores page opens (Mockup 7)
-8. The High Scores listed include my initials and score from the previous game, and other initials with their scores if these are locally saved. The scores are ordered numerically from highest to lowest (Mockup 8)
-9. When on the Home Scores page, if I click **Clear High Scores** all the initials and scores are deleted from local storage and do not display on the page. (Mockup 8)
+1. When the application opens, I am presented with a page that displays without error and matches the mock up gif image below
+2. When I click the **Start Quiz** button, the first question appears
+3. When I click the **Start Quiz** button, the timer (top right of page) starts at 75 seconds and reduces in 1 second increments
+4. Choosing a correct answer triggers a green "correct" message and opens the next question. The timer continues to reduce in 1 second increments.
+5. When the timer reaches 0 before all questions are answered, a heading "You ran out of time!" displays with the final score.
+6. When I answer all questions before the timer reaches 0, a heading "All done!" displays with the final score.
+7. When I enter my initials and then click **Submit**, the High Scores page opens.
+8. The High Scores listed include my initials and score from the previous game, and other initials with their scores if these are locally saved. The scores are ordered numerically from highest to lowest.
+9. When on the Home Scores page, if I click **Clear High Scores** all the initials and scores are deleted from local storage and do not display on the page. 
 10. When on the Home Scores page, if I click **Go Back** the Coding Quiz Challenge home page opens 
 11. When on the Coding Quiz challenge home page, if I click the High Scores link the High Scores page opens.
-
 
 ## Challenges and Further Work
 
 ### Tracking functions and keeping organised
-This is the most complex web application I've made, and found it challenging tracking all the functions and code components, and keeping the code organised. I've "over commented" in an attempt to keep track of what the code is doing. I also used numbering to help remember the order the functions were called. After a few disasters, where I broke the application and couldn't resolve, I was more rigorous about making back up copies and commiting changes using git. 
+This is the most complex web application I've made, and found it challenging tracking all the functions and code components, and keeping the code organised. I "over commented" to help keep track of what the code is doing. I also used numbering to help remember the order the functions were called. Several times I broke the application and couldn't find the problem, so I became more rigorous about making back up copies and commiting changes using git. 
 
-## Mock-Ups
+## Mock-Up
 
-The following imagees show the web application's appearance and functionality:
+The gif demonstrates the coding quiz challenge application's appearance and functionality
 
-### Mock-Up 1
-
-![Mock-Up 1](./assets/images/mock-up-1.png)
-
-
-### Mock-Up 2
-
-![Mock-Up 2](./assets/images/mock-up-2.png)
-
-
-### Mock-Up 3
-
-![Mock-Up 3](./assets/images/mock-up-3.png)
-
-
-### Mock-Up 4
-
-![Mock-Up 4](./assets/images/mock-up-4.png)
-
-### Mock-Up 5
-
-![Mock-Up 5](./assets/images/mock-up-5.png)
-
-### Mock-Up 6
-
-![Mock-Up 6](./assets/images/mock-up-6.png)
-
+![A user answers the coding quiz challenge questions, saving or resetting the high scores.](./assets/Coding-Quiz-Challenge.gif)
